@@ -28,5 +28,4 @@ int main()
   b=input();
   add(a,b,&sum);
   output(a,b,sum);
-  
 }
