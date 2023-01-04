@@ -15,6 +15,7 @@ int input(){
   int a;
   scanf("%d", &a);
   return a;
+  
 }
 int compare(int a, int b, int c){
   if (a > b && a > c)
