@@ -1,6 +1,7 @@
 #include<stdio.h>
 int input();
 int compare(int a, int b, int c);
+
 void output(int a, int b, int c, int largest);
 
 int input()
@@ -22,7 +23,7 @@ int compare(int a, int b,int c)
   else if (c>a&&c>b){
     return c;
   }
-  else
+  else  
   {
     largest=c;
   }
