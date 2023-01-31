@@ -1,6 +1,6 @@
-#include<stdio.h>
-int main(void)
+#include <stdio.h>
+int main()
 {
-  printf("Prince Ranjan");
-  return(0);
+printf("Prince Ranjan\n");
+return(0);
 }
