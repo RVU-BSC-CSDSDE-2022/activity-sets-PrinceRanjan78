@@ -1,43 +1,33 @@
 #include <stdio.h>
-#structure complex
+#include<math.h>
+float input();
+float square_root(float n);
+void output(float n, float sqrroot);
+float input()
 {
-  int real,img;
+float n,sqrroot;
+printf("enter the number:");
+scanf("%f",&n);
+return(n);
 }
-typedef structure complex;
-int get_n();
-complex input_complex();
-void input_n_complex(int n,complex C[n]);
-complex add (complex a, complex b);
-complex add_n_complex(int n, complex c[n]);
-void output(int n, complex c[n],complex result);
-
+float square_root(float n)
+{
+float i=1;
+while(fabs(i*i-n)/2>0.0001)
+{
+i=(i+n/i)/2;
+}
+return i;
+}
+void output(float n,float sqrroot)
+{
+printf("square root of %.2f=%.2f",n,sqrroot);
+}
 int main()
 {
-  int n = get_n();
-  complex c[n],result;
-  input_n_complex[c,n];
-  result= add_ncolplex(n,c);
-  out(n,c,result0;)
-  
+int n,sqrroot;
+n=input();
+sqrroot=square_root(n);
+output(n,sqrroot);
+return(0);
 }
-int get_n()
-{
-  int a;
-  printf("enter the number.\n");
-  scanf("%d", &a);
-  return(a);
-  
-}
-complex input_complexZ()
-{
-  complex a;
-  printf("enter a and b where a + b is the first complex number.\n");
-  scanf("%d%d",&a.real,&a.img);
-  return(a);
-}
-void intput_n_complex(int n, comples c[n])
-{
-  int i;
-  for(i=0;i<n;i++)
-}
-  
