@@ -1,31 +1,25 @@
 #include<stdio.h>
-
-float input(float base, float height);
-float find_area(float base , float height, float area);
+void input(float *base, float *height);
+void  find_area(float base, float height, float *area);
 void output(float base, float height, float area);
-
+void input(float *base, float *height)
+{
+printf("enter the base and height:");
+scanf("%f%f", base, height);
+}
+void find_area(float base, float height, float *area)
+{
+*area=0.5*base*height;
+}
+void output(float base, float height, float area)
+{
+printf("area both %f and %f is %f",base, height , area);
+}
 int main()
 {
-  float base,height,area;
-  base=input();
-  height=input();
-  find_area(base,height,area);
-  output(base,height,area);
-  return 0;
-}
-
-float input(float base, float height){
-  float n;
-  printf("Enter base and height:");
-  scanf("%f",&n);
-  return 0;
-}
-float find_area(float base , float height, float *area)
-{
-  return (1/2)*base*height;
-}
-
-void output(float base, float height, float area){
-  area=(1/2)*base*height;
-  printf("The area of the traingle with base %f and height %f is %f",base,height,area);
+float n, base , height, area;
+input(&base,&height);
+find_area(base, height, &area);
+output(base, height, area);
+return 0;
 }
