@@ -7,6 +7,8 @@ Triangle;
 int input_n();
 Triangle input_triangle();
 void input_n_triangle(int n, Triangle t[n]);
+void find_area(Triangle *t);
+void find_n_areas(int n,Triangle t[n]);
 Triangle find_smallest_triangle(int n, Triangle t[n]);
 void output(int n, Triangle t[n], Triangle smallest);
 
@@ -33,10 +35,12 @@ Triangle input_triangle()
 {
 Triangle T;
 printf("enter the base of the triangle\n");
+scanf("%f",&T.base);
+printf("enter the altitude of the triangle\n");
 scanf("%f",&T.altitude);
 return T;
 }
-void input_n_triangle(int n, Triangle t[n])
+void input_n_triangles(int n, Triangle t[n])
 {
 int i=0;
 for(i=0;i<n;i++)
@@ -51,7 +55,7 @@ t->area=((t->base)*(t->altitude))*0.5;
 void find_n_areas(int n, Triangle t[n])
 {
 for (int i=0;i<n;i++)
-}
+{
 find_area(&t[i]);
 }
 }
@@ -64,6 +68,8 @@ if (t[i].area<small.area)
 {
 small=t[i];
 }
+}
+return small;
 }
 void output(int n, Triangle t[n], Triangle smallest)
 {
