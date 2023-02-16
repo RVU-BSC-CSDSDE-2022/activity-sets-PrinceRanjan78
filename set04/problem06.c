@@ -9,8 +9,9 @@ int main()
 {
 char string[100];
 input_string(string);
+int number_of _words;
 int number_of_words=count_words(string);
-output(string.number_of_words);
+output(string,number_of_words);
 return 0;
 }
 
@@ -52,3 +53,5 @@ tok=strtok(NULL," ");
 }
 printf("' is %d\n",no_words);
 }
+
+
