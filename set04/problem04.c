@@ -1,47 +1,68 @@
 #include<stdio.h>
+#include<math.h>
 
-
-void input_n_and_r(int *n, int *r);
-int nCr(int n, int r);
-void output(int n, int r, int result);
+int input_degree();
+void input_coefficients(int n, float a[n]);
+float input_x();
+float evaluate_polynomial(int n,float a[n], float x);
+void output(int n,float a[n],float x,float result);
 
 int main()
 {
-int n,r,result;
-input_n_and_r(&n,&r);
-result=nCr(n,r);
-output(n,r,result);
+float x;
+x=input_x();
+int highest_degree;
+highest_degree=input_degree();
+float coeff[highest_degree];
+input_coefficients(highest_degree,coeff);
+float result;
+
+result=evaluate_polynomial(highest_degree,coeff,x);
+output(highest_degree,coeff,x,result);
 return 0;
 }
-void input_n_and_r(int *n, int *r)
+
+int input_degree()
 {
-printf("enter 'n' for nCr\n");
-scanf("%d",n);
-printf("enter 'r' for nCr\n");
-scanf("%d",r);
+int n;
+printf("enter the highest degree of 'x'\n");
+scanf("%d",&n);
+return n;
 }
-int nCr(int n, int r)
+
+void input_coefficients(int n,float a[n])
 {
-int n_fact=1,r_fact=1,n_r_fact=1;
-int result;
-int i;
-for (i=1;i<=n;i++)
+for (int i=0;i<=n;i++)
 {
-if (i<=r)
+printf("enter co-efficient for x^%d \n",i);
+scanf("%f",&a[i]);
+}
+}
+
+float input_x()
 {
-r_fact=r_fact * i;
-n_r_fact=n_r_fact * i;
+float x;
+printf("enter the value of 'x'\n");
+scanf("%f",&x);
+return x;
 }
-else if (i<=n-r)
+float evaluate_polynomial(int n,float a[n],float x)
 {
-n_r_fact=n_r_fact * i;
-}
-n_fact=n_fact * i;
-}
-result=n_fact/((n_r_fact)*(r_fact));
-return result;
-}
-void output(int n, int r, int result)
+float sum=0;
+for (int i=0;i<=n;i++)
 {
-printf("for n=%d and r=%d, nCr=%d\n",n,r,result);
+sum=sum+(a[i]*(pow(x,i)));
 }
+return sum;
+}
+
+void output(int n, float a[n], float x, float result)
+{
+int i=0;
+while(i<=n-1)
+{
+printf("%.2f*%.2f^%d +",a[i],x,i);
+}
+printf("%.2f*%.2f^%d = %.2f\n",a[i],x,i,result);
+}
+

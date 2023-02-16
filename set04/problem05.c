@@ -1,61 +1,59 @@
 #include<stdio.h>
 
-int input_array_size();
-void init_array(int n, int a[n]);
-void erotosthenes_sieve(int n, int a[n]);
-void output(int n, int a[n]);
+int input_size();
+void input_array(int n, int a[n]);
+int find_largest_index(int n, int a[n]);
+void output(int index);
 
 int main()
 {
-int size;
-size=intput_array_size();
-int array[size];
-init_array[size];
-erotosthenes_sieve(size,array);
-output(size,array);
+int n, index;
+n=input_size();
+int array[n];
+input_array(n,array);
+
+index=find_largest_index(n,array);
+output(index);
 return 0;
 }
 
-int input_array_size()
+int input_size()
 {
 int n;
-printf("enter the number till where you want to find the prime numbers\n");
-scan("%d",&n);
+printf("enter the size of the array\n");
+scanf("%d",&n);
 return n;
 }
 
-void inti_array(int n,int a[n])
+void input_array(int n,int a[n])
 {
-for(int i=0;i<=n-2;i++)
+int i;
+for (i=0;i<n;i++)
 {
-a[i]=i+2;
+printf("enter the number\n");
+scan("%d",&a[i]);
 }
 }
 
-void erotosthenes_sieve(int n, int a[n])
+int find_largest_index(int n, int a[n])
 {
-int i,j;
-for (i=0;a[i]*a[i]<n;i++)
+int largest;
+largest=a[0];
+int index=0;
+int i;
+for (i=1;i<n;i++)
 {
-for (j=i+2;j<n-1;j++)
+if (a[i]>largest)
 {
-if ((a[j]%a[i]==0)&&(a[i]!=1))
-{
-a[j]=1;
+largest=a[i];
+index=i;
 }
 }
-}
+return index;
 }
 
-void output(int n, int a[n])
+void output(int index)
 {
-printf("all the prime numbers between 2 and %d are [",n);
-for (int i=0;i<=n-2,i++)
-{
-if (a[i]!=1)
-{
-printf("%d",a[i]);
+printf("the index of the largest number  is the array is %d\n",index);
 }
-}
-printf("]\n");
-}
+
