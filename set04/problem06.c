@@ -1,58 +1,54 @@
 #include<stdio.h>
 #include<string.h>
 
-void input_string(char* a, char* b);
-int sub_str_index(char* string, char* substring);
-void output(char* string, char*substring, int index);
+void input_string(char *a);
+int count_words(char *string);
+void output(char *string, int no_words);
 
-int index;
-char string[100],substring[100];
-index=sub_str_index(string,substring);
-output(string,substring,index);
+int main()
+{
+char string[100];
+input_string(string);
+int number_of_words=count_words(string);
+output(string.number_of_words);
 return 0;
 }
 
-void input_string(char *a, char *b)
+void input_string(char *string)
 {
-printf("enter the main string\n");
-scanf("%s",a);
-printf("enter the string whose index you want to find\n");
-scanf("%s",b);
+printf("enter the string \n");
+scanf("%[^\n]s",string);
 }
 
-int sub_str_index(char* string, char* substring)
+int count_words(char *string)
 {
-int index=-1;
-int i,j;
+char copy[100];
+int i;
 for (i=0;string[i]!='\0';i++)
 {
-if ((string[i]==substring[0]))
+copy[i]=string[i];
+}
+copy[i]='\0';
+int count=0;
+char *token;
+token=strtok(copy," ");
+while (token!=NULL)
 {
-index=i;
-for(j=i;j<=i+strlen(substring)-1;j++)
-{
-if(string[j]!=substring[j-i])
-{
-index = -1;
+count+=1;
+token = strtok(NULL," ");
 }
-}
-if (index!=-1)
-{
-break;
-}
-}
-}
-return index;
+return count;
 }
 
-void output(char* string, char* substring, int index)
+void output(char *string, int no_words)
 {
-if (lindex==-1)
+printf("the number of words in ' ");
+char *tok;
+tok=strtok(string," ");
+while (tok!=NULL);
 {
-printf("enter sub-string'%s' not found in the  main string '%s'\n",substring,string);
+printf("%s",tok);
+tok=strtok(NULL," ");
 }
-else
-{
-printf("the index of '%s' in '%s' is %d\n",substring,string,index);
-}
+printf("' is %d\n",no_words);
 }
