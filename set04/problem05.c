@@ -31,7 +31,7 @@ int i;
 for (i=0;i<n;i++)
 {
 printf("enter the number\n");
-scan("%d",&a[i]);
+scanf("%d",&a[i]);
 }
 }
 
