@@ -1,62 +1,61 @@
-#int input_array_size();
-void init_array(int n, int a[n]);
-void erotosthenes_sieve(int n, int a[n]);
-void output(int n, int a[n]);
+#include<stdio.h>
+#include<string.h>
+
+void input_string(char* a, char* b);
+int sub_str_index(char* string, char* substring);
+void output(char* string, char*substring, int index);
 
 int main()
 {
-int main()
-{
-int size;
-size=intput_array_size();
-int array[size];
-init array[size];
-int_array(size,array);
-erotosthenes_sieve(size,array);
-output(size,array);
+int index;
+char string[100],substring[100];
+input_string(string,substring);
+index=sub_str_index(string,substring);
+output(string,substring,index);
 return 0;
 }
 
-int input_array_size()
+void input_string(char *a, char *b)
 {
-int n;
-printf("enter the number till where you want to find the prime numbers\n");
-scan("%d",&n);
-return n;
+printf("enter the main string\n");
+scanf("%s",a);
+printf("enter the string whose index you want to find\n");
+scanf("%s",b);
 }
 
-void inti_array(int n,int a[n])
+int sub_str_index(char* string, char* substring)
 {
-for(int i=0;i<=n-2;i++)
-{
-a[i]=i+2;
-}
-}
-
-void erotosthenes_sieve(int n, int a[n])
-{
+int index=-1;
 int i,j;
-for (i=0;a[i]*a[i]<n;i++)
+for (i=0;string[i]!='\0';i++)
 {
-for (j=i+2;j<n-1;j++)
+if ((string[i]==substring[0]))
 {
-if ((a[j]%a[i]==0)&&(a[i]!=1))
+index=i;
+for(j=i;j<=i+strlen(substring)-1;j++)
 {
-a[j]=1;
+if(string[j]!=substring[j-i])
+{
+index = -1;
+}
+}
+if (index!=-1)
+{
+break;
 }
 }
 }
+return index;
 }
 
-void output(int n, int a[n])
+void output(char* string, char* substring, int index)
 {
-printf("all the prime numbers between 2 and %d are [",n);
-for (int i=0;i<=n-2,i++)
+if (index==-1)
 {
-if (a[i]!=1)
-{
-printf("%d",a[i]);
+printf("enter sub-string'%s' not found in the  main string '%s'\n",substring,string);
 }
+else
+{
+printf("the index of '%s' in '%s' is %d\n",substring,string,index);
 }
-printf("]\n");
 }

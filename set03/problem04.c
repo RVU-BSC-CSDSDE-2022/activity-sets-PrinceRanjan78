@@ -46,5 +46,5 @@ return fib[n];
 
 void  output(int n, int fibo)
 {
-printf("fibo(%d)= %d)= %d\n",n,fibo);
+printf("fibo(%d) = %d\n",n,fibo);
 }
