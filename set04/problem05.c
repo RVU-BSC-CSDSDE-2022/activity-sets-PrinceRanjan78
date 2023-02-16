@@ -56,4 +56,3 @@ void output(int index)
 {
 printf("the index of the largest number  is the array is %d\n",index);
 }
-
