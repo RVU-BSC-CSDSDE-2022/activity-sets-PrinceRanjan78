@@ -53,4 +53,3 @@ tok=strtok(NULL," ");
 }
 printf("' is %d\n",no_words);
 }
-
