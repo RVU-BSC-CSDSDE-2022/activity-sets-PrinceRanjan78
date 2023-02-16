@@ -1,50 +1,47 @@
 #include<stdio.h>
 
-int input();
-int find_fibo(int n);
-void output(int n, int fibo);
+
+void input_n_and_r(int *n, int *r);
+int nCr(int n, int r);
+void output(int n, int r, int result);
 
 int main()
 {
-int n;
-n=input();
-int fibo;
-fibo=find_fibo(n);
-output(n,fibo);
+int n,r,result;
+input_n_and_r(&n,&r);
+result=nCr(n,r);
+output(n,r,result);
 return 0;
 }
-
-int input()
+void input_n_and_r(int *n, int *r)
 {
-int n;
-printf("enter 'n' for fibo(n)\n");
-scanf("%d",&n);
-return n;
+printf("enter 'n' for nCr\n");
+scanf("%d",n);
+printf("enter 'r' for nCr\n");
+scanf("%d",r);
 }
-
-int find_fibo(int n)
+int nCr(int n, int r)
 {
+int n_fact=1,r_fact=1,n_r_fact=1;
+int result;
 int i;
-int fib[n+1];
-for(i=0;i<n+1;i++)
+for (i=1;i<=n;i++)
 {
-if (i==0)
+if (i<=r)
 {
-fib[i]=0;
+r_fact=r_fact * i;
+n_r_fact=n_r_fact * i;
 }
-else if((i==1)||(i==2))
+else if (i<=n-r)
 {
-fib[i]=1;
+n_r_fact=n_r_fact * i;
 }
-else
+n_fact=n_fact * i;
+}
+result=n_fact/((n_r_fact)*(r_fact));
+return result;
+}
+void output(int n, int r, int result)
 {
-fib[i]=fib[i-1]+ fib[i-2];
-}
-}
-return fib[n];
-}
-
-void  output(int n, int fibo)
-{
-printf("fibo(%d) = %d\n",n,fibo);
+printf("for n=%d and r=%d, nCr=%d\n",n,r,result);
 }
