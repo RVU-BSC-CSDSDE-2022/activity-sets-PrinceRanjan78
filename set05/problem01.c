@@ -25,7 +25,7 @@ return 0;
 Point input()
 {
 Point p;
-Printf("enter the Co-Ordinates(x,y\n)");
+printf("enter the Co-Ordinates(x,y\n)");
 scanf("%f%f",&p.x,&p.y);
 return p;
 }
