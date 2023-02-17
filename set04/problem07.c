@@ -1,51 +1,61 @@
-#include <stdio.h>
-#include<math.h>
-struct point
+#include<stdio.h>
+struct fraction
 {
-float x,y;
+int num,den;
 };
-typedef struct point Point;
+typedef struct fraction Fraction;
 
-struct line
-{
-Point p1,p2;
-float distance;
-};
-typedef struct line Line;
-
-Point input_point();
-Line input_line();
-void find_length(Line *l);
-void output(Line l);
+Fraction input_fraction();
+int find_gcd(int a, int b);
+Fraction add_fractions(Fraction f1, Fraction f2);
+void output(Fraction f1, Fraction f2, Fraction sum);
 int main()
 {
-Line l;
-l=input_line();
-find_length(&l);
-output(l);
+Fraction f1,f2,sum;
+f1=input_fraction();
+f2=input_fraction();
+sum=add_fractions(f1,f2);
+output(f1,f2,sum);
 return 0;
 }
-Point input_point()
+Fraction input_fraction()
 {
-Point p;
-printf("enter (x,y)\n");
-scanf("%f%f",&p.x,&p.y);
-return p;
+Fraction f;
+printf("enter the numerator\n");
+scanf("%d",&f.num);
+printf("enter the denominator\n");
+scanf("%d",&f.den);
+return f;
 }
-Line input_line()
+
+int find_gcd(int a,int b)
 {
-Line l;
-l.p1=input_point();
-l.p2=input_point();
-return l;
+float gcd;
+int i;
+for(i=1;(i<=a||i<=b);i++)
+{
+if ((a%i==0)&&(b%i==0))
+{
+gcd=i;
 }
-void find_length(Line *l)
-{
-float dist;
-dist=sqrt((pow((l->p2.y)-(l->p1.y),2)) + (pow((l->p2.x)-(l->p1.x),2)));
-l->distance=dist;
 }
-void output(Line l)
+return gcd;
+}
+
+Fraction add_fractions(Fraction f1, Fraction f2)
 {
-printf("the distance between the Points (%.2f,%.2f) and (%.2f,%.2f) is %2f\n",l.p1.x,l.p1.y,l.p2.x,l.p2.y,l.distance);
+Fraction result;
+float hcf=find_gcd(f1.den,f2.den);
+result.den=(f1.den*f2.den)/hcf;
+f1.num=f1.num*(result.den/(f1.den));
+f2.num=f2.num*(result.den/(f2.den));
+result.num=f1.num + f2.num;
+return result;
+}
+
+void output(Fraction f1, Fraction f2, Fraction sum)
+{
+int simplification;
+simplification=find_gcd(sum.num,sum.den);
+printf("%d/%d + %d/%d = %d/%d = %d/%d\n",f1.num,f1.den,f2.num,f2.den,sum.den,sum.num/simplification,sum.den/simplification);
 }
