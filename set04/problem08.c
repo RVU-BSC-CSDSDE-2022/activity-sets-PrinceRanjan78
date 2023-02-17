@@ -96,7 +96,7 @@ int i=0;
 while(i<n-1)
 {
 printf("%d/%d +",f[i].num,f[i].den);
-i++
+i++;
 }
 
 printf("%d/%d =%d/%d =%d/%d\n",f[i].num,f[i].den,sum.num,sum.den,sum.num/simplification_factor,sum.den/simplification_factor);
