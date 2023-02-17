@@ -18,7 +18,7 @@ Point a,b;
 a=input();
 b=input();
 float res;
-dis(a,b,&res);
+dist(a,b,&res);
 output(a,b,res);
 return 0;
 }
