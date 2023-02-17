@@ -8,11 +8,11 @@ typedef struct fraction Fraction;
 
 int input_n();
 Fraction input_fraction();
-void input_n_fractions(int n,Fractionf[n]);
+void input_n_fractions(int n,Fraction f[n]);
 int find_gcd(int a,int b);
 Fraction add_fractions(Fraction f1,Fraction f2);
 Fraction add_n_fractions(int n, Fraction f[n]);
-void output(int n,Fractionf[n], Fraction sum);
+void output(int n,Fraction f[n], Fraction sum);
 
 int main()
 {
@@ -78,7 +78,7 @@ return result;
 Fraction add_n_fractions(int n, Fraction f[n])
 {
 Fraction add;
-add num=0;
+add.num=0;
 add.den=1;
 for(int i=0;i<n;i++)
 {
@@ -91,11 +91,11 @@ void output(int n, Fraction f[n], Fraction sum)
 int simplification_factor;
 
 
-simplification_factor=find_gcd(sum.num,sumden);
+simplification_factor=find_gcd(sum.num,sum.den);
 int i=0;
 while(i<n-1)
 {
-printf("%d/%=",f[i].num,f[i].den);
+printf("%d/%d +",f[i].num,f[i].den);
 i++
 }
 
