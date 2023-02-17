@@ -57,5 +57,5 @@ void output(Fraction f1, Fraction f2, Fraction sum)
 {
 int simplification;
 simplification=find_gcd(sum.num,sum.den);
-printf("%d/%d + %d/%d = %d/%d = %d/%d\n",f1.num,f1.den,f2.num,f2.den,sum.den,sum.num/simplification,sum.den/simplification);
+printf("%d/%d + %d/%d = %d/%d=%d/%d\n",f1.num,f1.den,f2.num,f2.den,sum.num,sum.den/simplification,sum.den/simplification);
 }
