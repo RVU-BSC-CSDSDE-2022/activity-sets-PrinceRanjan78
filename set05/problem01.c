@@ -40,4 +40,3 @@ void output(Point a, Point b, float res)
 
 printf("the distance between(%.1f,%.1f) and (%.1f,%.1f) is %.4f\n",a.x,a.y,b.x,b.y,res);
 }
-
