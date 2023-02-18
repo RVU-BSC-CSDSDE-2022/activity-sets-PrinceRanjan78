@@ -25,7 +25,7 @@ return pi*(radius*radius*radius)*sqrt_hl;
 
 void output(float radius, float height, float length, float weight)
 {
-print("the weight of the camel with stomach radius: %.2f, height : %.2f and length : %.2f is %.4f", radius, height, length, weight);
+printf("the weight of the camel with stomach radius: %.2f, height : %.2f and length : %.2f is %.4f", radius, height, length, weight);
 }
 
 int main()
