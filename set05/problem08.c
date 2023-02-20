@@ -33,7 +33,7 @@ int i;
 for (i=0;i<n;i++)
 {
 printf("enter the stomach radius of camel %d\n",i+1);
-scanf("%f",,&c[i].radius);
+scanf("%f",&c[i].radius);
 printf("enter the height of camel %d\n",i+1);
 scanf("%f",&c[i].height);
 printf("enter the weight of truck\n");
