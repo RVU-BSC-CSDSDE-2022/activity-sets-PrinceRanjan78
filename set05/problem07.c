@@ -26,7 +26,7 @@ else
 cons_count+=1;
 }
 }
-if ((vowel_count>=2) && (cons-count>=2))
+if ((vowel_count>=2) && (cons_count>=2))
 {
 return 1;
 }
