@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-void input(char name);
+void input(char *name);
 int has_nice_name(char *c);
 void output(int res);
 
@@ -15,7 +15,7 @@ int has_nice_name(char *c)
 int i=0;
 int vowel_count=0;
 int cons_count=0;
-for (i=0;[i]!='\0';i++)
+for (i=0;c[i]!='\0';i++)
 {
 if ((c[i]=='a' || c[i]=='A') || (c[i]=='e' || c[i]=='E') || (c[i]=='i' || c[i]=='I') || (c[i]=='o' || c[i]==O) || (c[i]=='u' || c[i]=='U'))
 {
@@ -57,3 +57,4 @@ res=has_nice_name(name);
 output(res);
 return 0;
 }
+
