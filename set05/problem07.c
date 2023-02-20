@@ -17,7 +17,7 @@ int vowel_count=0;
 int cons_count=0;
 for (i=0;c[i]!='\0';i++)
 {
-if ((c[i]=='a' || c[i]=='A') || (c[i]=='e' || c[i]=='E') || (c[i]=='i' || c[i]=='I') || (c[i]=='o' || c[i]==O) || (c[i]=='u' || c[i]=='U'))
+if ((c[i]=='a' || c[i]=='A') || (c[i]=='e' || c[i]=='E') || (c[i]=='i' || c[i]=='I') || (c[i]=='o' || c[i]==) || (c[i]=='u' || c[i]=='U'))
 {
 vowel_count=vowel_count+1;
 }
