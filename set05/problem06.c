@@ -2,7 +2,7 @@
 
 int input_n();
 void input(int n, int a[n]);
-void odd_average(int n, int a[n]);
+float odd_average(int n, int a[n]);
 void output(float avg);
 
 int main()
