@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include<math.h>
 
@@ -36,8 +37,8 @@ printf("enter the stomach radius of camel %d\n",i+1);
 scanf("%f",&c[i].radius);
 printf("enter the height of camel %d\n",i+1);
 scanf("%f",&c[i].height);
-printf("enter the weight of truck\n");
-scanf("%f",truck_weight);
+printf("enter the length of camel%d\n",i+1);
+scanf("%f",&c[i].length);
 }
 printf("Enter the Weight of the Truck\n");
 scanf("%f",truck_weight);
