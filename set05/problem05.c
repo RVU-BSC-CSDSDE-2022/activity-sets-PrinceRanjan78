@@ -7,7 +7,7 @@ void output(int x, float result);
 int main()
 {
 int x;
-x=input();
+x=input(x);
 float sum;
 sum=borga_x(x);
 float result;
@@ -33,7 +33,7 @@ int j=1;
 while (i>0)
 {
 den=1;
-for(j=1;j=((2*i)+1);j++)
+for(j=1;j<=((2*i)+1);j++)
 {
 den=den*j;
 }
@@ -49,6 +49,7 @@ break;
 }
 }
 return sum;
+}
 
 void output(int x, float result)
 {
