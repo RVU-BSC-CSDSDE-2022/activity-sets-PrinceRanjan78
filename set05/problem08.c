@@ -43,7 +43,7 @@ scanf("%f",truck_weight);
 void find_camel_weight(int n,Camel c[n])
 {
 int i;
-float sqrt_h[n];
+float sqrt_hl[n];
 float pi=3.1412;
 for (i=0;i<n;i++)
 {
